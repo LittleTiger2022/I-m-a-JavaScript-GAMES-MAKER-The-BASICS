@@ -1,0 +1,33 @@
+<html>
+<body style ="background-color:darkblue">
+<img id="ghost" onmouseenter="hideMe()" style="position:absolute;" src = "ghost.png">
+<img id="kids" onclick="runAway()" style="position:absolute;" src = "kids.png">
+
+</body>
+
+<script>
+colors = ["red","green","orange","blue","yellow","purple"];
+
+var timer = window.setInterval(moveGhost,2000);
+
+/* var timer = window.setInterval(changeColor,1000);
+*/
+function moveGhost() {
+	document.getElementById("ghost").style.left=Math.random()*900+"px";
+	document.getElementById("ghost").style.top=Math.random()*900+"px";
+}
+function changeColor(){
+	var n = Math.round(Math.random()*4);
+	document.body.style.backgroundColor=colors[n];
+}
+function hideMe(){
+document.getElementById("ghost").style.display="none";
+}	
+
+function runAway(){
+	document.getElementById("kids").style.left = Math.random()*900+"px";
+	document.getElementById("kids").style.top = Math.random()*900+"px";
+
+}
+</script>
+</html>
